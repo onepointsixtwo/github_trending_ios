@@ -13,7 +13,7 @@ enum HttpMethod {
     case get
 }
 
-class NetworkRequest {
+final class NetworkRequest {
     let method: HttpMethod
     let url: URL
     let headers: [String: String]
@@ -30,7 +30,7 @@ class NetworkRequest {
 protocol ResponseParseable {
     associatedtype T
 
-    func parseResponseData(data: Data) -> T
+    func parseResponseData(data: Data) -> T?
 }
 
 protocol ErrorParseable {

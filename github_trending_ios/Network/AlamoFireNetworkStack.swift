@@ -27,8 +27,9 @@ final class AlamofireNetworkStack: NetworkStack {
                                         headers: request.headers)
                 .validate(statusCode: 200..<300)
                 .responseData { (response: DataResponse) in
-                    if let data = response.data {
-                        obs.send(value: responseParser.parseResponseData(data: data))
+                    if let data = response.data,
+                        let parsed = responseParser.parseResponseData(data: data) {
+                        obs.send(value: parsed)
                         obs.sendCompleted()
                     } else {
                         obs.send(error: errorParser.parseError(error: response.error))

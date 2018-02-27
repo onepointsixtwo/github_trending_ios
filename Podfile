@@ -9,6 +9,7 @@ target 'github_trending_ios' do
 
   target 'github_trending_iosTests' do
     inherit! :search_paths
+    pod 'ReactiveSwift', '~> 3.0'
   end
 
 end
