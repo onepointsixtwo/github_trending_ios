@@ -13,20 +13,28 @@ final class GitHubClient {
 
     let network: NetworkStack
     let baseURL: URL
+    let dateFormatter: DateFormatter
 
     init(baseURL: URL, network: NetworkStack) {
         self.baseURL = baseURL
         self.network = network
+
+        dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
     }
 
     func getTrendingRepositories() -> SignalProducer<[GitHubRepository], GitHubError> {
         let fullURL = baseURL.appendingPathComponent("search").appendingPathComponent("repositories")
+
+        let sevenDaysAgo = Date(timeIntervalSinceNow: -86400 * 7)
+        let dateString = dateFormatter.string(from: sevenDaysAgo)
+
         let networkRequest = NetworkRequest(method: .get,
                                             url: fullURL,
                                             headers: [String: String](),
                                             queryParameters: ["sort": "stars",
                                                               "order": "desc",
-                                                              "q":"created:>`date -v-7d '+%y-%m-%d'`"])
+                                                              "q":"created:>\(dateString)"])
         return network.makeNetworkRequest(request: networkRequest,
                                           responseParser: GitHubRepositoryParser(),
                                           errorParser: GitHubErrorParser())
