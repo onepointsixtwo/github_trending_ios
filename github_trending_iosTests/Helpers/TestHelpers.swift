@@ -10,14 +10,21 @@ import Foundation
 import ReactiveSwift
 @testable import github_trending_ios
 
-final class TestNetworkStack: NetworkStack {
+final public class TestNetworkStack: NetworkStack {
 
     public var data: Data?
+    public var error: Bool = false
 
-    func makeNetworkRequest<R, E>(request: NetworkRequest,
+    public init() {}
+
+    public func makeNetworkRequest<R, E>(request: NetworkRequest,
                                   responseParser: R,
                                   errorParser: E) -> SignalProducer<R.T, E.E> where R : ResponseParseable, E : ErrorParseable {
-        return SignalProducer(value: responseParser.parseResponseData(data: data!)!)
+        if !error {
+            return SignalProducer(value: responseParser.parseResponseData(data: data!)!)
+        } else {
+            return SignalProducer(error: errorParser.parseError(error: nil))
+        }
     }
 }
 
