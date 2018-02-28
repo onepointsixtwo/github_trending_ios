@@ -35,6 +35,7 @@
 		78E1F6CF2046F7BB00351594 /* RepositoryViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6CE2046F7BB00351594 /* RepositoryViewManager.swift */; };
 		78E1F6D12046F87500351594 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6D02046F87500351594 /* RepositoryViewController.swift */; };
 		78E1F6D32046F88400351594 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6D22046F88400351594 /* RepositoryViewModel.swift */; };
+		78E1F6D52047093400351594 /* RepositoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6D42047093400351594 /* RepositoryViewModelTests.swift */; };
 		85F50408ED8B36DE831ECC2E /* Pods_github_trending_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6840B1DCC7B0BADDDAEA56BA /* Pods_github_trending_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		78E1F6CE2046F7BB00351594 /* RepositoryViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewManager.swift; sourceTree = "<group>"; };
 		78E1F6D02046F87500351594 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		78E1F6D22046F88400351594 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		78E1F6D42047093400351594 /* RepositoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModelTests.swift; sourceTree = "<group>"; };
 		B343F314C6C0FA3B0066A33F /* Pods-github_trending_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_iosTests/Pods-github_trending_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA595E406ECA0BD1C441AE58 /* Pods-github_trending_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_iosTests/Pods-github_trending_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9FA1F80F483A0E5C687CF81 /* Pods_github_trending_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_trending_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +165,7 @@
 				78E1F6B420460AEB00351594 /* GitHubClientTests.swift */,
 				78E1F6BC2046A9F200351594 /* ObservableFieldTests.swift */,
 				78E1F6CB2046D3E900351594 /* TrendingRepositoryViewModelTests.swift */,
+				78E1F6D42047093400351594 /* RepositoryViewModelTests.swift */,
 			);
 			path = github_trending_iosTests;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-github_trending_ios/Pods-github_trending_ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -448,6 +452,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -556,6 +561,7 @@
 			files = (
 				78C4257C2045F37700BD5D95 /* GithubParsersTests.swift in Sources */,
 				78E1F6BD2046A9F200351594 /* ObservableFieldTests.swift in Sources */,
+				78E1F6D52047093400351594 /* RepositoryViewModelTests.swift in Sources */,
 				78E1F6B520460AEB00351594 /* GitHubClientTests.swift in Sources */,
 				78E1F6CC2046D3E900351594 /* TrendingRepositoryViewModelTests.swift in Sources */,
 				78C4257E2045FB1400BD5D95 /* TestHelpers.swift in Sources */,

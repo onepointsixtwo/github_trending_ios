@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.6.0)
+  - Down (0.4.2)
   - ReactiveSwift (3.1.0):
     - Result (~> 3.2)
   - Result (3.2.4)
@@ -9,15 +10,17 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.6)
+  - Down
   - ReactiveSwift (~> 3.0)
   - SDWebImage (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Down: 92efba7c95a8efdb84b7114e365db4a37f3df76e
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
 
-PODFILE CHECKSUM: 02ae1075dc60baeda8c3861dd5d6446413e2a124
+PODFILE CHECKSUM: b192589ff9b8fb171cf79ce751235482096e9969
 
 COCOAPODS: 1.4.0
