@@ -30,7 +30,7 @@ class GitHubClientTests: XCTestCase {
     }
 
     func testFetchingReadme() {
-        let user = GitHubUser(id: 1, name: "")
+        let user = GitHubUser(id: 1, name: "", avatarURL: URL(string: "https://api.github.com")!)
         let url = URL(string: "https://api.github.com")!
         let repository = GitHubRepository(id: 1, name: "", owner: user, description: "", forksURL: url, stargazersURL: url, forksCount: 1, stargazersCount: 1)
 

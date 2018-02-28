@@ -11,11 +11,14 @@ import Foundation
 final class GitHubUser {
     let id: Int
     let name: String
+    let avatarURL: URL
 
     init(id: Int,
-         name: String) {
+         name: String,
+         avatarURL: URL) {
         self.id = id
         self.name = name
+        self.avatarURL = avatarURL
     }
 }
 

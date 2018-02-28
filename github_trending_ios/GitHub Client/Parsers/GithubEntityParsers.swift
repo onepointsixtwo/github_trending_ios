@@ -87,8 +87,10 @@ final class GitHubRepositoryParser: ResponseParseable {
     func parseOwnerFromJson(json: [String: Any]?) -> GitHubUser? {
         if let json = json,
             let name = json["login"] as? String,
-            let id = json["id"] as? Int {
-            return GitHubUser(id: id, name: name)
+            let id = json["id"] as? Int,
+            let avatarURLString = json["avatar_url"] as? String,
+            let avatarURL = URL(string: avatarURLString) {
+            return GitHubUser(id: id, name: name, avatarURL: avatarURL)
         }
         return nil
     }

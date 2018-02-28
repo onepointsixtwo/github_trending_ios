@@ -28,6 +28,7 @@ class GitHubParsersTest: XCTestCase {
         XCTAssertEqual(122692377, repositoryFirst?.id)
         XCTAssertEqual(1390, repositoryFirst?.forksCount)
         XCTAssertEqual("houshanren", repositoryFirst?.owner.name)
+        XCTAssertEqual("https://avatars0.githubusercontent.com/u/6621875?v=4", repositoryFirst?.owner.avatarURL.absoluteString)
     }
 
     func testFailsToParseBadRepositoriesResponse() {
