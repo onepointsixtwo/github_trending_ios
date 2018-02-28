@@ -12,19 +12,32 @@ import ReactiveSwift
 
 final public class TestNetworkStack: NetworkStack {
 
-    public var data: Data?
+    private var responseList: [Data] = [Data]()
     public var error: Bool = false
 
     public init() {}
+
+    public func addResponse(data: Data?) {
+        responseList.append(data!)
+    }
 
     public func makeNetworkRequest<R, E>(request: NetworkRequest,
                                   responseParser: R,
                                   errorParser: E) -> SignalProducer<R.T, E.E> where R : ResponseParseable, E : ErrorParseable {
         if !error {
-            return SignalProducer(value: responseParser.parseResponseData(data: data!)!)
+            return SignalProducer(value: responseParser.parseResponseData(data: pickOffNextResponse()!)!)
         } else {
             return SignalProducer(error: errorParser.parseError(error: nil))
         }
+    }
+
+    private func pickOffNextResponse() -> Data? {
+        if responseList.count > 0 {
+            let data = responseList[0]
+            responseList.remove(at: 0)
+            return data
+        }
+        return nil
     }
 }
 

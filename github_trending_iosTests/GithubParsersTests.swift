@@ -14,6 +14,7 @@ class GitHubParsersTest: XCTestCase {
 
     let repositoryParser = GitHubRepositoryParser()
     let readmeParser = GitHubReadmeParser()
+    let readmeLinkParser = GitHubReadmeLinkParser()
 
     func testParsesGoodRepositoriesResponse() {
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
@@ -42,23 +43,35 @@ class GitHubParsersTest: XCTestCase {
     }
 
     func testParsesGoodReadmeResponse() {
-        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_response", andExtension: "json")
+        let data = getDataFromFile(forClass: type(of: self), withName: "readme_content", andExtension: "txt")
         guard let fileData = data else {
             XCTFail("Cannot find good repositories response")
             return
         }
         let readme = readmeParser.parseResponseData(data: fileData)
         XCTAssertNotNil(readme)
-        XCTAssertEqual("This is a test README.md", readme?.readmeMarkdown)
+        XCTAssertEqual("This is a test README.md\n", readme?.readmeMarkdown)
     }
 
-    func testFailsToParseBadReadmeResponse() {
-        let data = getDataFromFile(forClass: type(of: self), withName: "bad_readme_response", andExtension: "json")
+    func testParsesGoodReadmeLinkResponse() {
+        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_url_response", andExtension: "json")
         guard let fileData = data else {
             XCTFail("Cannot find good repositories response")
             return
         }
-        let readme = readmeParser.parseResponseData(data: fileData)
+
+        let readme = readmeLinkParser.parseResponseData(data: fileData)
+        XCTAssertNotNil(readme)
+        XCTAssertEqual("https://www.google.com", readme?.downloadURL.absoluteString)
+    }
+
+    func testFailsToParseBadReadmeLinkResponse() {
+        let data = getDataFromFile(forClass: type(of: self), withName: "bad_readme_url_response", andExtension: "json")
+        guard let fileData = data else {
+            XCTFail("Cannot find good repositories response")
+            return
+        }
+        let readme = readmeLinkParser.parseResponseData(data: fileData)
         XCTAssertNil(readme)
     }
 }

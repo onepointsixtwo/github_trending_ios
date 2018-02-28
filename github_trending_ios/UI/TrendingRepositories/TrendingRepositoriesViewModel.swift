@@ -27,6 +27,10 @@ class TrendingRepositoriesViewModel {
     }
 
     func fetchRepositories() {
+        if repositories.count > 0 {
+            return
+        }
+        
         showLoading.value = true
         showError.value = false
 

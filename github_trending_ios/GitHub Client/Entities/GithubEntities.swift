@@ -58,3 +58,11 @@ final class GitHubReadme {
         self.readmeMarkdown = readmeMarkdown
     }
 }
+
+final class GitHubReadmeLink {
+    let downloadURL: URL
+
+    init(downloadURL: URL) {
+        self.downloadURL = downloadURL
+    }
+}

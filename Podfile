@@ -7,7 +7,7 @@ target 'github_trending_ios' do
   pod 'Alamofire', '~> 4.6'
   pod 'ReactiveSwift', '~> 3.0'
   pod 'SDWebImage', '~> 4.0'
-  pod 'Down'
+  pod 'SwiftyMarkdown'
 
   target 'github_trending_iosTests' do
     inherit! :search_paths

@@ -6,9 +6,10 @@
 //  Copyright © 2018 Kartupelis, John. All rights reserved.
 //
 
-import Down
+
 import Foundation
 import ReactiveSwift
+import SwiftyMarkdown
 
 class RepositoryViewModel {
 
@@ -62,14 +63,11 @@ class RepositoryViewModel {
     }
 
     private func handleLoadingSuccessful(readme: GitHubReadme) {
-        let down = Down(markdownString: readme.readmeMarkdown)
-        let attributedString = try? down.toAttributedString()
-        if let attributedString = attributedString {
-            readmeMarkdown.value = attributedString
-            readmeLoadingVisible.value = false
-        } else {
-            handleLoadingFailure()
-        }
+        let md = SwiftyMarkdown(string: readme.readmeMarkdown)
+        md.body.fontName = "Avenir"
+        let attributedString = md.attributedString()
+        readmeMarkdown.value = attributedString
+        readmeLoadingVisible.value = false
     }
 
     private func handleLoadingFailure() {

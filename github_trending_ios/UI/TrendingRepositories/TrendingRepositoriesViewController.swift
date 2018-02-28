@@ -94,10 +94,6 @@ class TrendingRepositoriesViewController: UIViewController, UISearchBarDelegate,
         viewModel?.filterRepositoriesBySearch(search: searchText)
     }
 
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
@@ -142,9 +138,5 @@ class TrendingRepositoriesViewController: UIViewController, UISearchBarDelegate,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModel?.repositoryAtIndexPressed(index: indexPath.row)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        searchBar.resignFirstResponder()
     }
 }

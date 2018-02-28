@@ -49,8 +49,13 @@ final class GitHubClient {
                                             url: fullURL,
                                             headers: [String: String](),
                                             queryParameters: [String: String]())
+
         return network.makeNetworkRequest(request: request,
-                                          responseParser: GitHubReadmeParser(),
-                                          errorParser: GitHubErrorParser())
+                                          responseParser: GitHubReadmeLinkParser(),
+                                          errorParser: GitHubErrorParser()).flatMap(.concat) { [unowned self] (link: GitHubReadmeLink) -> SignalProducer<GitHubReadme, GitHubError> in
+                                            let secondaryRequest = NetworkRequest(method: .get, url: link.downloadURL, headers: [String: String](), queryParameters: [String: String]())
+                                            return self.network.makeNetworkRequest(request: secondaryRequest, responseParser: GitHubReadmeParser(), errorParser: GitHubErrorParser())
+
+        }
     }
 }

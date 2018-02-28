@@ -22,7 +22,7 @@ class GitHubClientTests: XCTestCase {
 
     func testFetchingTrendingRepositories() {
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
-        mockNetworkStack.data = data
+        mockNetworkStack.addResponse(data: data)
 
         let result = githubClient?.getTrendingRepositories().single()?.value
         XCTAssertNotNil(result)
@@ -34,11 +34,13 @@ class GitHubClientTests: XCTestCase {
         let url = URL(string: "https://api.github.com")!
         let repository = GitHubRepository(id: 1, name: "", owner: user, description: "", forksURL: url, stargazersURL: url, forksCount: 1, stargazersCount: 1)
 
-        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_response", andExtension: "json")
-        mockNetworkStack.data = data
+        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_url_response", andExtension: "json")
+        let data2 = getDataFromFile(forClass: type(of: self), withName: "readme_content", andExtension: "txt")
+        mockNetworkStack.addResponse(data: data)
+        mockNetworkStack.addResponse(data: data2)
 
         let readme = githubClient?.getReadmeForRepository(repository: repository).single()?.value
         XCTAssertNotNil(readme)
-        XCTAssertEqual("This is a test README.md", readme?.readmeMarkdown)
+        XCTAssertEqual("This is a test README.md\n", readme?.readmeMarkdown)
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60B70444374D896AD9A091A5 /* Pods_github_trending_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FA1F80F483A0E5C687CF81 /* Pods_github_trending_iosTests.framework */; };
+		7893419C2047461800D674CF /* readme_content.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7893419B2047461800D674CF /* readme_content.txt */; };
 		78C4254C2045D84900BD5D95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4254B2045D84900BD5D95 /* AppDelegate.swift */; };
 		78C425512045D84900BD5D95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C4254F2045D84900BD5D95 /* Main.storyboard */; };
 		78C425532045D84900BD5D95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C425522045D84900BD5D95 /* Assets.xcassets */; };
@@ -21,8 +22,8 @@
 		78C4257E2045FB1400BD5D95 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4257D2045FB1400BD5D95 /* TestHelpers.swift */; };
 		78C425802045FC8B00BD5D95 /* bad_repositories_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C4257F2045FC8B00BD5D95 /* bad_repositories_response.json */; };
 		78C425832045FE4300BD5D95 /* GitHubClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C425822045FE4300BD5D95 /* GitHubClient.swift */; };
-		78C42585204604F000BD5D95 /* good_readme_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C42584204604F000BD5D95 /* good_readme_response.json */; };
-		78C425872046050E00BD5D95 /* bad_readme_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C425862046050E00BD5D95 /* bad_readme_response.json */; };
+		78C42585204604F000BD5D95 /* good_readme_url_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C42584204604F000BD5D95 /* good_readme_url_response.json */; };
+		78C425872046050E00BD5D95 /* bad_readme_url_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 78C425862046050E00BD5D95 /* bad_readme_url_response.json */; };
 		78E1F6B520460AEB00351594 /* GitHubClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6B420460AEB00351594 /* GitHubClientTests.swift */; };
 		78E1F6BB2046A8F400351594 /* ObservableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6BA2046A8F400351594 /* ObservableField.swift */; };
 		78E1F6BD2046A9F200351594 /* ObservableFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6BC2046A9F200351594 /* ObservableFieldTests.swift */; };
@@ -53,6 +54,7 @@
 		089B5068B5507B6185AC1172 /* Pods-github_trending_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_ios/Pods-github_trending_ios.release.xcconfig"; sourceTree = "<group>"; };
 		33377A7A816BB931DDA113B8 /* Pods-github_trending_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_ios/Pods-github_trending_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6840B1DCC7B0BADDDAEA56BA /* Pods_github_trending_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_trending_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7893419B2047461800D674CF /* readme_content.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme_content.txt; sourceTree = "<group>"; };
 		78C425482045D84900BD5D95 /* github_trending_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_trending_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C4254B2045D84900BD5D95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C425502045D84900BD5D95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,8 +73,8 @@
 		78C4257D2045FB1400BD5D95 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		78C4257F2045FC8B00BD5D95 /* bad_repositories_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bad_repositories_response.json; sourceTree = "<group>"; };
 		78C425822045FE4300BD5D95 /* GitHubClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient.swift; sourceTree = "<group>"; };
-		78C42584204604F000BD5D95 /* good_readme_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = good_readme_response.json; sourceTree = "<group>"; };
-		78C425862046050E00BD5D95 /* bad_readme_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bad_readme_response.json; sourceTree = "<group>"; };
+		78C42584204604F000BD5D95 /* good_readme_url_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = good_readme_url_response.json; sourceTree = "<group>"; };
+		78C425862046050E00BD5D95 /* bad_readme_url_response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bad_readme_url_response.json; sourceTree = "<group>"; };
 		78E1F6B420460AEB00351594 /* GitHubClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClientTests.swift; sourceTree = "<group>"; };
 		78E1F6BA2046A8F400351594 /* ObservableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableField.swift; sourceTree = "<group>"; };
 		78E1F6BC2046A9F200351594 /* ObservableFieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableFieldTests.swift; sourceTree = "<group>"; };
@@ -210,8 +212,9 @@
 			children = (
 				78C425782045EFEF00BD5D95 /* good_repositories_response.json */,
 				78C4257F2045FC8B00BD5D95 /* bad_repositories_response.json */,
-				78C42584204604F000BD5D95 /* good_readme_response.json */,
-				78C425862046050E00BD5D95 /* bad_readme_response.json */,
+				78C42584204604F000BD5D95 /* good_readme_url_response.json */,
+				78C425862046050E00BD5D95 /* bad_readme_url_response.json */,
+				7893419B2047461800D674CF /* readme_content.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -409,9 +412,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C425802045FC8B00BD5D95 /* bad_repositories_response.json in Resources */,
-				78C425872046050E00BD5D95 /* bad_readme_response.json in Resources */,
+				7893419C2047461800D674CF /* readme_content.txt in Resources */,
+				78C425872046050E00BD5D95 /* bad_readme_url_response.json in Resources */,
 				78C425792045EFEF00BD5D95 /* good_repositories_response.json in Resources */,
-				78C42585204604F000BD5D95 /* good_readme_response.json in Resources */,
+				78C42585204604F000BD5D95 /* good_readme_url_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,18 +448,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-github_trending_ios/Pods-github_trending_ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

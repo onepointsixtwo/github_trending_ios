@@ -24,17 +24,26 @@ final class GitHubReadmeParser: ResponseParseable {
     typealias T = GitHubReadme
 
     func parseResponseData(data: Data) -> GitHubReadmeParser.T? {
+        if let content = String(data: data, encoding: .utf8) {
+            return GitHubReadme(readmeMarkdown: content)
+        }
+        return nil
+    }
+}
+
+final class GitHubReadmeLinkParser: ResponseParseable {
+    typealias T = GitHubReadmeLink
+
+    func parseResponseData(data: Data) -> GitHubReadmeLink? {
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
-                let contentEncoded = json["content"] as? String,
-                let convertedData = Data(base64Encoded: contentEncoded),
-                let content = String(data: convertedData, encoding: .utf8) {
-                return GitHubReadme(readmeMarkdown: content)
+                let urlString = json["download_url"] as? String,
+                let url = URL(string: urlString) {
+                return GitHubReadmeLink(downloadURL: url)
             }
         } catch {
-            print("Failed to parse Git")
+            print("Failed to parse Github Readme link")
         }
-
         return nil
     }
 }
@@ -48,7 +57,7 @@ final class GitHubRepositoryParser: ResponseParseable {
                 return parseGithubRepositoriesFromJson(json: json)
             }
         } catch {
-            print("Failed to parse Git")
+            print("Failed to parse GitHub Repositories")
         }
 
         return nil

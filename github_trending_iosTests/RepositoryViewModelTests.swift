@@ -38,8 +38,10 @@ class RepositoryViewModelTests: XCTestCase {
     }
 
     func testSuccessfullyLoadingReadme() {
-        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_response", andExtension: "json")
-        testNetworkStack?.data = data
+        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_url_response", andExtension: "json")
+        let data2 = getDataFromFile(forClass: type(of: self), withName: "readme_content", andExtension: "txt")
+        testNetworkStack?.addResponse(data: data)
+        testNetworkStack?.addResponse(data: data2)
         testNetworkStack?.error = false
 
         viewModel?.loadReadme()
@@ -63,8 +65,10 @@ class RepositoryViewModelTests: XCTestCase {
 
         viewModel?.loadReadme()
 
-        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_response", andExtension: "json")
-        testNetworkStack?.data = data
+        let data = getDataFromFile(forClass: type(of: self), withName: "good_readme_url_response", andExtension: "json")
+        let data2 = getDataFromFile(forClass: type(of: self), withName: "readme_content", andExtension: "txt")
+        testNetworkStack?.addResponse(data: data)
+        testNetworkStack?.addResponse(data: data2)
         testNetworkStack?.error = false
 
         viewModel?.loadReadme()

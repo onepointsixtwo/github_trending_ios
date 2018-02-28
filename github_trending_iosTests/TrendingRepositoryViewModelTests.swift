@@ -26,7 +26,7 @@ class TrendingRepositoryViewModelTests: XCTestCase {
 
     func testSuccessfullyLoadingRepositories() {
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
-        testNetworkStack?.data = data
+        testNetworkStack?.addResponse(data: data)
         testNetworkStack?.error = false
 
         viewModel?.fetchRepositories()
@@ -59,7 +59,7 @@ class TrendingRepositoryViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel?.showLoading.value == true)
 
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
-        testNetworkStack?.data = data
+        testNetworkStack?.addResponse(data: data)
         testNetworkStack?.error = false
 
         viewModel?.fetchRepositories()
@@ -71,7 +71,7 @@ class TrendingRepositoryViewModelTests: XCTestCase {
 
     func testFilteringRepositoriesWithSearchStrings() {
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
-        testNetworkStack?.data = data
+        testNetworkStack?.addResponse(data: data)
         testNetworkStack?.error = false
 
         viewModel?.fetchRepositories()
@@ -99,7 +99,7 @@ class TrendingRepositoryViewModelTests: XCTestCase {
 
     func testRepositoryPressed() {
         let data = getDataFromFile(forClass: type(of: self), withName: "good_repositories_response", andExtension: "json")
-        testNetworkStack?.data = data
+        testNetworkStack?.addResponse(data: data)
         testNetworkStack?.error = false
 
         viewModel?.fetchRepositories()
