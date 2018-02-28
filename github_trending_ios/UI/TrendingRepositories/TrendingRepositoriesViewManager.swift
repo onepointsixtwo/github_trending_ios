@@ -11,6 +11,7 @@ import UIKit
 
 class TrendingRepositoriesViewManager: ViewManager, TrendingRepositoriesViewModelDelegate {
     weak var delegate: ViewManagerDelegate?
+    var repositoryViewManager: RepositoryViewManager?
     let githubClient: GitHubClient
     let storyboard: UIStoryboard
     let trendingRepositoriesIdentifier = "trendingRepositoriesViewController"
@@ -34,6 +35,8 @@ class TrendingRepositoriesViewManager: ViewManager, TrendingRepositoriesViewMode
     }
 
     func openRepository(repository: GitHubRepository) {
-        //TODO: open a view controller to view the individual repository's information
+        repositoryViewManager = RepositoryViewManager(githubClient: githubClient, repository: repository, storyboard: storyboard)
+        repositoryViewManager?.delegate = self.delegate
+        repositoryViewManager?.start()
     }
 }

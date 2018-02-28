@@ -32,6 +32,9 @@
 		78E1F6C82046B52D00351594 /* TrendingRepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6C72046B52D00351594 /* TrendingRepositoriesViewModel.swift */; };
 		78E1F6CA2046CB2500351594 /* TrendingRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6C92046CB2500351594 /* TrendingRepositoryCell.swift */; };
 		78E1F6CC2046D3E900351594 /* TrendingRepositoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6CB2046D3E900351594 /* TrendingRepositoryViewModelTests.swift */; };
+		78E1F6CF2046F7BB00351594 /* RepositoryViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6CE2046F7BB00351594 /* RepositoryViewManager.swift */; };
+		78E1F6D12046F87500351594 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6D02046F87500351594 /* RepositoryViewController.swift */; };
+		78E1F6D32046F88400351594 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E1F6D22046F88400351594 /* RepositoryViewModel.swift */; };
 		85F50408ED8B36DE831ECC2E /* Pods_github_trending_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6840B1DCC7B0BADDDAEA56BA /* Pods_github_trending_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		78E1F6C72046B52D00351594 /* TrendingRepositoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoriesViewModel.swift; sourceTree = "<group>"; };
 		78E1F6C92046CB2500351594 /* TrendingRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoryCell.swift; sourceTree = "<group>"; };
 		78E1F6CB2046D3E900351594 /* TrendingRepositoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingRepositoryViewModelTests.swift; sourceTree = "<group>"; };
+		78E1F6CE2046F7BB00351594 /* RepositoryViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewManager.swift; sourceTree = "<group>"; };
+		78E1F6D02046F87500351594 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		78E1F6D22046F88400351594 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		B343F314C6C0FA3B0066A33F /* Pods-github_trending_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_iosTests/Pods-github_trending_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA595E406ECA0BD1C441AE58 /* Pods-github_trending_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_iosTests/Pods-github_trending_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9FA1F80F483A0E5C687CF81 /* Pods_github_trending_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_trending_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +245,7 @@
 			children = (
 				78E1F6BF2046B1B800351594 /* Manager */,
 				78E1F6C22046B3BA00351594 /* TrendingRepositories */,
+				78E1F6CD2046F6BD00351594 /* Repository */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -277,6 +284,16 @@
 				78E1F6C92046CB2500351594 /* TrendingRepositoryCell.swift */,
 			);
 			path = TrendingRepositories;
+			sourceTree = "<group>";
+		};
+		78E1F6CD2046F6BD00351594 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				78E1F6CE2046F7BB00351594 /* RepositoryViewManager.swift */,
+				78E1F6D02046F87500351594 /* RepositoryViewController.swift */,
+				78E1F6D22046F88400351594 /* RepositoryViewModel.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		9CE975F11560A189DC6DBB98 /* Frameworks */ = {
@@ -515,13 +532,16 @@
 			files = (
 				78E1F6C12046B23600351594 /* ViewManager.swift in Sources */,
 				78E1F6BB2046A8F400351594 /* ObservableField.swift in Sources */,
+				78E1F6D32046F88400351594 /* RepositoryViewModel.swift in Sources */,
 				78C4256D2045DA1D00BD5D95 /* NetworkStack.swift in Sources */,
 				78C4256F2045E18600BD5D95 /* AlamoFireNetworkStack.swift in Sources */,
 				78C425832045FE4300BD5D95 /* GitHubClient.swift in Sources */,
 				78C4254C2045D84900BD5D95 /* AppDelegate.swift in Sources */,
+				78E1F6CF2046F7BB00351594 /* RepositoryViewManager.swift in Sources */,
 				78C425762045ED8C00BD5D95 /* GithubEntityParsers.swift in Sources */,
 				78E1F6C62046B50700351594 /* TrendingRepositoriesViewController.swift in Sources */,
 				78E1F6C42046B3DB00351594 /* TrendingRepositoriesViewManager.swift in Sources */,
+				78E1F6D12046F87500351594 /* RepositoryViewController.swift in Sources */,
 				78E1F6C82046B52D00351594 /* TrendingRepositoriesViewModel.swift in Sources */,
 				78E1F6CA2046CB2500351594 /* TrendingRepositoryCell.swift in Sources */,
 				78C425732045EC5300BD5D95 /* GithubEntities.swift in Sources */,
