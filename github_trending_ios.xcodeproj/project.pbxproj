@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		60B70444374D896AD9A091A5 /* Pods_github_trending_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FA1F80F483A0E5C687CF81 /* Pods_github_trending_iosTests.framework */; };
 		7893419C2047461800D674CF /* readme_content.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7893419B2047461800D674CF /* readme_content.txt */; };
+		7893419E20483ED300D674CF /* ColourPallette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893419D20483ED300D674CF /* ColourPallette.swift */; };
 		78C4254C2045D84900BD5D95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4254B2045D84900BD5D95 /* AppDelegate.swift */; };
 		78C425512045D84900BD5D95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C4254F2045D84900BD5D95 /* Main.storyboard */; };
 		78C425532045D84900BD5D95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C425522045D84900BD5D95 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		33377A7A816BB931DDA113B8 /* Pods-github_trending_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_trending_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-github_trending_ios/Pods-github_trending_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6840B1DCC7B0BADDDAEA56BA /* Pods_github_trending_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_trending_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7893419B2047461800D674CF /* readme_content.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme_content.txt; sourceTree = "<group>"; };
+		7893419D20483ED300D674CF /* ColourPallette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPallette.swift; sourceTree = "<group>"; };
 		78C425482045D84900BD5D95 /* github_trending_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = github_trending_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C4254B2045D84900BD5D95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C425502045D84900BD5D95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				78E1F6BA2046A8F400351594 /* ObservableField.swift */,
+				7893419D20483ED300D674CF /* ColourPallette.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				78E1F6D12046F87500351594 /* RepositoryViewController.swift in Sources */,
 				78E1F6C82046B52D00351594 /* TrendingRepositoriesViewModel.swift in Sources */,
 				78E1F6CA2046CB2500351594 /* TrendingRepositoryCell.swift in Sources */,
+				7893419E20483ED300D674CF /* ColourPallette.swift in Sources */,
 				78C425732045EC5300BD5D95 /* GithubEntities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6DGGA4GWZR;
+				DEVELOPMENT_TEAM = Y8HB64Q55C;
 				INFOPLIST_FILE = "$(SRCROOT)/github_trending_ios/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "onepointsixtwo.github-trending-ios";
@@ -731,7 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6DGGA4GWZR;
+				DEVELOPMENT_TEAM = Y8HB64Q55C;
 				INFOPLIST_FILE = "$(SRCROOT)/github_trending_ios/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "onepointsixtwo.github-trending-ios";

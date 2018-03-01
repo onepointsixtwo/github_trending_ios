@@ -23,6 +23,7 @@ final class GitHubClient {
         dateFormatter.dateFormat = "yyyy-MM-dd"
     }
 
+    // Fetches the last seven days of repos by descending order of stars (trending)
     func getTrendingRepositories() -> SignalProducer<[GitHubRepository], GitHubError> {
         let fullURL = baseURL.appendingPathComponent("search").appendingPathComponent("repositories")
 
@@ -40,6 +41,7 @@ final class GitHubClient {
                                           errorParser: GitHubErrorParser())
     }
 
+    // Makes two requests - the first to get the URL for the README.md and the second to grab the text from it
     func getReadmeForRepository(repository: GitHubRepository) -> SignalProducer<GitHubReadme, GitHubError> {
         let fullURL = baseURL.appendingPathComponent("repos")
                                 .appendingPathComponent(repository.owner.name)
@@ -53,6 +55,7 @@ final class GitHubClient {
         return network.makeNetworkRequest(request: request,
                                           responseParser: GitHubReadmeLinkParser(),
                                           errorParser: GitHubErrorParser()).flatMap(.concat) { [unowned self] (link: GitHubReadmeLink) -> SignalProducer<GitHubReadme, GitHubError> in
+
                                             let secondaryRequest = NetworkRequest(method: .get, url: link.downloadURL, headers: [String: String](), queryParameters: [String: String]())
                                             return self.network.makeNetworkRequest(request: secondaryRequest, responseParser: GitHubReadmeParser(), errorParser: GitHubErrorParser())
 

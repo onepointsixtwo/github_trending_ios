@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ViewManagerDelegate {
         mainViewManager?.start()
     }
 
+
+    //MARK: - ViewManager Delegate
+
     func present(viewController: UIViewController) {
         if let navigationController = navigationController {
             navigationController.pushViewController(viewController, animated: true)
@@ -51,17 +54,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ViewManagerDelegate {
         }
     }
 
+
+    //MARK: - Helpers
+
     private func setupRootNavigationController(_ rootViewController: UIViewController) {
+        self.window = createWindow()
+        self.navigationController = createRootNavigationController(rootViewController)
+
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
+
+    private func createWindow() -> UIWindow {
         let window = UIWindow()
         window.backgroundColor = UIColor.white
+        return window
+    }
 
+    private func createRootNavigationController(_ rootViewController: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        window.rootViewController = navigationController
-
-        self.navigationController = navigationController
-        self.window = window
-
-        window.makeKeyAndVisible()
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: ColourPallette.blueGrey]
+        navigationController.navigationBar.tintColor = ColourPallette.blueGrey
+        navigationController.navigationBar.backgroundColor = ColourPallette.white
+        navigationController.navigationBar.isTranslucent = false
+        return navigationController
     }
 }
 

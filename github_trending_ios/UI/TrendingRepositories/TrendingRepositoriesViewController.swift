@@ -25,6 +25,7 @@ class TrendingRepositoriesViewController: UIViewController, UISearchBarDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackButton()
         setupSearchBar()
         setupTableView()
         setupViewModelBindings()
@@ -53,6 +54,10 @@ class TrendingRepositoriesViewController: UIViewController, UISearchBarDelegate,
 
     // MARK: - Setup
 
+    private func setupBackButton() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+    }
+
     private func setupViewModelBindings() {
         viewModel?.showError.observe { [unowned self] _ in self.handleObscuringViewUpdate() }
         viewModel?.showLoading.observe { [unowned self] _ in self.handleObscuringViewUpdate() }
@@ -80,6 +85,11 @@ class TrendingRepositoriesViewController: UIViewController, UISearchBarDelegate,
     private func handleObscuringViewUpdate() {
         obscuringView.isHidden = viewModel?.showLoading.value == false && viewModel?.showError.value == false
         loadingSpinner.isHidden = viewModel?.showLoading.value == false
+        if viewModel?.showLoading.value == true {
+            loadingSpinner.startAnimating()
+        } else {
+            loadingSpinner.stopAnimating()
+        }
         retryButton.isHidden = viewModel?.showError.value == false
     }
 

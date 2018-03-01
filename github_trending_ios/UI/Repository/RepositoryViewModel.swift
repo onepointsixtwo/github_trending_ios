@@ -46,6 +46,10 @@ class RepositoryViewModel {
     }
 
     func loadReadme() {
+        if !readmeMarkdown.value.string.isEmpty {
+            return
+        }
+
         readmeFailedLoadingVisible.value = false
         readmeLoadingVisible.value = true
 

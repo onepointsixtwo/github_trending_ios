@@ -46,7 +46,8 @@ class RepositoryViewModelTests: XCTestCase {
 
         viewModel?.loadReadme()
 
-        XCTAssertEqual("This is a test README.md", viewModel?.readmeMarkdown.value.string.trimmingCharacters(in: CharacterSet.newlines))
+        // The extra '\n ' is required because Xcode forces a newline in the readme_content text file
+        XCTAssertEqual("This is a test README.md\n ", viewModel?.readmeMarkdown.value.string)
         XCTAssertEqual(false, viewModel?.readmeLoadingVisible.value)
         XCTAssertEqual(false, viewModel?.readmeFailedLoadingVisible.value)
     }
@@ -73,7 +74,7 @@ class RepositoryViewModelTests: XCTestCase {
 
         viewModel?.loadReadme()
 
-        XCTAssertEqual("This is a test README.md", viewModel?.readmeMarkdown.value.string.trimmingCharacters(in: CharacterSet.newlines))
+        XCTAssertEqual("This is a test README.md\n ", viewModel?.readmeMarkdown.value.string)
         XCTAssertEqual(false, viewModel?.readmeLoadingVisible.value)
         XCTAssertEqual(false, viewModel?.readmeFailedLoadingVisible.value)
     }
